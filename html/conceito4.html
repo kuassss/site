@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Arduíno</title>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <a href="../index.html">Home</a>
+        <a href="./intelbras_placas.html">Placas Solares</a>
+        <a href="./Componentes.html">Componentes</a>
+        <a href="./conceito1.html">Entrada Digital</a>
+        <a href="./conceito2.html">Arduino</a>
+        <a href="./conceito3.html">Multímetro</a>
+        <a href="./Projeto_solid.html">Projeto solid</a>
+        <a href="./Conclusão.html">Conclusão</a>
+    </nav>
+    </header>
+    <main>
+
+    <h3>Teste de continuidade</h3>
+    <p>O teste de continuidade é uma forma de verificar se os componentes de um circuito elétrico estão funcionando corretamente, identificando cabos rompidos, curtos ou falhas dentro do sistema utilizando um multímetro.
+    </p><br>
+<img src="../img/teste_cont.jpeg" alt=""><br>
+<video src="../videos/teste_cont.mp4" type="video/mp4" controls></video><br><br>
+
+<h3>Monitor Serial</h3>
+
+<video src="../videos/monitor_serial.mp4" type="video/mp4" controls></video><br><br>
+<video src="../videos/monitor_serial2.mp4" type="video/mp4" controls></video><br><br>
+
+<h3>Projeto LEDs</h3>
+<img src="../img/print_leds_tinker.png" alt="Leds">
+<br>
+<img src="../img/ligacao_fisica_leds.jpeg" alt="Leds">
+<br>
+<video src="../videos/Teste_leds.mp4" type="video/mp4" controls></video><br><br>
+
+<h3>Código C++</h3>
+<pre>// C++ code
+    //
+    int analog = 0;
+    
+    void setup()
+    {
+      pinMode(A0, INPUT);
+      pinMode(12, OUTPUT);
+      Serial.begin(9600);
+      pinMode(11, OUTPUT);
+      pinMode(10, OUTPUT);
+    }
+    
+    void loop()
+    {
+      analog = analogRead(A0);
+      if (analog >= 300) {
+        digitalWrite(12, HIGH);
+        Serial.println(analog);
+      }
+      if (analog >= 600) {
+        digitalWrite(12, LOW);
+        digitalWrite(11, HIGH);
+      }
+      if (analog >= 900) {
+        digitalWrite(12, LOW);
+        digitalWrite(11, LOW);
+        digitalWrite(10, HIGH);
+      }
+      if (analog < 900) {
+        digitalWrite(12, LOW);
+        digitalWrite(11, HIGH);
+        digitalWrite(10, LOW);
+      }
+      if (analog < 600) {
+        digitalWrite(12, HIGH);
+        digitalWrite(11, LOW);
+        digitalWrite(10, LOW);
+      }
+      delay(10); // Delay a little bit to improve simulation performance
+    }</pre>
+
+    <h3>Projeto 7 Segmentos</h3>
+    <img src="../img/print_seteseg_tinker.png" alt="tinker">
+    <br>
+    <img src="../img/foto_7_segmentos.jpg" alt="7seg">
+    <br>
+    <video src="../videos/Vídeo_teste_7seg.mov" type="video/mp4" controls></video><br><br>
+
+
+<h3>Código C++</h3>
+<pre>// C++ code
+    //
+    int contador = 0;
+    
+    void setup()
+    {
+      pinMode(A0, INPUT);
+      pinMode(8, OUTPUT);
+      pinMode(2, OUTPUT);
+      pinMode(7, OUTPUT);
+      pinMode(6, OUTPUT);
+      pinMode(5, OUTPUT);
+      pinMode(4, OUTPUT);
+      pinMode(3, OUTPUT);
+      Serial.begin(9600);
+    }
+    
+    void loop()
+    {
+      if (analogRead(A0) <= 99) {
+        digitalWrite(8, LOW);
+        digitalWrite(2, HIGH);
+        digitalWrite(7, HIGH);
+        digitalWrite(6, HIGH);
+        digitalWrite(5, HIGH);
+        digitalWrite(4, HIGH);
+        digitalWrite(3, HIGH);
+        Serial.println(analogRead(A0));
+      }
+      if (analogRead(A0) >= 100) {
+        digitalWrite(8, LOW);
+        digitalWrite(2, LOW);
+        digitalWrite(7, LOW);
+        digitalWrite(6, LOW);
+        digitalWrite(5, LOW);
+        digitalWrite(4, HIGH);
+        digitalWrite(3, HIGH);
+        Serial.println(analogRead(A0));
+      }
+      if (analogRead(A0) >= 200) {
+        digitalWrite(8, HIGH);
+        digitalWrite(2, HIGH);
+        digitalWrite(7, LOW);
+        digitalWrite(6, HIGH);
+        digitalWrite(5, HIGH);
+        digitalWrite(4, LOW);
+        digitalWrite(3, HIGH);
+        Serial.println(analogRead(A0));
+      }
+      if (analogRead(A0) >= 300) {
+        digitalWrite(8, HIGH);
+        digitalWrite(2, HIGH);
+        digitalWrite(7, LOW);
+        digitalWrite(6, LOW);
+        digitalWrite(5, HIGH);
+        digitalWrite(4, HIGH);
+        digitalWrite(3, HIGH);
+        Serial.println(analogRead(A0));
+      }
+      if (analogRead(A0) >= 400) {
+        digitalWrite(8, HIGH);
+        digitalWrite(2, LOW);
+        digitalWrite(7, HIGH);
+        digitalWrite(6, LOW);
+        digitalWrite(5, LOW);
+        digitalWrite(4, HIGH);
+        digitalWrite(3, HIGH);
+        Serial.println(analogRead(A0));
+      }
+      if (analogRead(A0) >= 500) {
+        digitalWrite(8, HIGH);
+        digitalWrite(2, HIGH);
+        digitalWrite(7, HIGH);
+        digitalWrite(6, LOW);
+        digitalWrite(5, HIGH);
+        digitalWrite(4, HIGH);
+        digitalWrite(3, LOW);
+        Serial.println(analogRead(A0));
+      }
+      if (analogRead(A0) >= 600) {
+        digitalWrite(8, HIGH);
+        digitalWrite(2, HIGH);
+        digitalWrite(7, HIGH);
+        digitalWrite(6, LOW);
+        digitalWrite(5, HIGH);
+        digitalWrite(4, HIGH);
+        digitalWrite(3, LOW);
+        Serial.println(analogRead(A0));
+      }
+      if (analogRead(A0) >= 700) {
+        digitalWrite(8, LOW);
+        digitalWrite(2, HIGH);
+        digitalWrite(7, LOW);
+        digitalWrite(6, LOW);
+        digitalWrite(5, LOW);
+        digitalWrite(4, HIGH);
+        digitalWrite(3, HIGH);
+        Serial.println(analogRead(A0));
+      }
+      if (analogRead(A0) >= 800) {
+        digitalWrite(8, HIGH);
+        digitalWrite(2, HIGH);
+        digitalWrite(7, HIGH);
+        digitalWrite(6, HIGH);
+        digitalWrite(5, HIGH);
+        digitalWrite(4, HIGH);
+        digitalWrite(3, HIGH);
+        Serial.println(analogRead(A0));
+      }
+      if (analogRead(A0) >= 900) {
+        digitalWrite(8, HIGH);
+        digitalWrite(2, HIGH);
+        digitalWrite(7, HIGH);
+        digitalWrite(6, LOW);
+        digitalWrite(5, LOW);
+        digitalWrite(4, HIGH);
+        digitalWrite(3, HIGH);
+        Serial.println(analogRead(A0));
+      }
+      delay(10); // Delay a little bit to improve simulation performance
+    }</pre>
+
+    
+    <h3>Gráfico Arduino Ide</h3>
+
+    <video src="../videos/grafico_monitor.mov" type="video/mp4" controls></video><br><br>
+
+
+
+    </main>
+    <footer>
+        By Kauã &copy;&trade;
+    </footer>
+</body>
+</html>

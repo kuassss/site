@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Entrada Digital(binário,físico e volts)</title>
+</head>
+<body>
+
+    <header>
+        <nav>
+      <a href="../index.html">Home</a>
+      <a href="./intelbras_placas.html">Placas Solares</a>
+      <a href="./Componentes.html">Componentes</a>
+      <a href="./conceito2.html">Arduino</a>
+      <a href="./conceito3.html">Multímetro</a>
+      <a href="./conceito4.html">Projeto Arduino</a>
+      <a href="./Projeto_solid.html">Projeto Solid</a>
+      <a href="./Conclusão.html">Conclusão</a>
+    </nav>
+    </header>
+    <main>
+<h1>Entrada e Saída digital</h1>
+<br>
+<h2>O que é entrada Digital?</h2>
+
+<p>Uma entrada digital é a forma com que o dispositivo lê os sinais externos, como sensores,botões, ou outros aparelhos externos. A entrada digital opera em dois estados, o 0 e 1, ou ligado e desligado, isso é chamado de sistema binário. Imagine um interruptor de uma casa, se ele está apertado(1) a luz é acesa e se ele não estiver apertado(0) a luz é apagada.Quando conectamos um botão a um microcontrolador, ele interpreta o pressionamento do botão como 1 e a soltura dele como 0.
+</p><br>
+
+<h2>Físico</h2>
+
+<p>Ademais, passando para o lado físico, esse processo acontece no hardware. Nós podemos usar como exemplo o pino de entrada do Arduíno uno. Os pinos são projetados para detectar mudanças elétricas, os pino lê a tensão aplicada, quando você conecta um sensor de movimento por exemplo, se não há nada conectado, ele pode flutuar. Ai  que vem a necessidade de resistores 
+</p>
+
+<h2>Volts</h2>
+
+<p> As entradas digitais operam com níveis de tensão específicos para representar o 0 e o 1. No caso de sistemas de 5V, como muitos Arduinos, um sinal abaixo de, digamos, 0,8V é considerado 0 (baixo), e acima de 2,5V é 1 (alto). Isso varia um pouco dependendo do dispositivo, alguns usam 3,3V, como o ESP32, onde os thresholds são ajustados para não fritar os componentes.  Se você aplicar 0V, é 0; 5V, é 1
+  .</p>
+
+  <h3>valor da entrada digital/saída em volts no arduino</h3>
+<p>0 é 0V e 1 é 5V</p>
+a
+
+  <h2>Entrada e saída Analógica</h2>
+
+  <p>Uma entrada analógica é uma interface de um dispositivo que recebe sinais elétricos, contínuos, como sensores de temperatura,nível e pressão, e os converte em valores numéricos.
+</p><br>
+
+<h3>Binário,Físico e Volts</h3>
+<p> Passando para o lado físico, podemos dar o exemplo de um sensor. Estes dispositivos apresentam sinais elétricos que variam continuamente, como uma onda sonora ou uma mudança de temperatura. Outro exemplo é um sensor de luz, dependendo da intensidade, ele pode gerar de 0V(luz baixa) até 5V(luz plena). Esse sinal é analógico  porque ele é contínuo, como um volume de uma rádio, você gira o botão e o som aumenta gradualmente. <br>
+    Assim, empregamos um conversor analógico-digital, ou ADC (Analog-to-Digital Converter), para processar essa entrada analógica. Esse componente transforma o sinal em volts em um número binário. Por exemplo, um conversor analógico-digital (ADC) com resolução de 10 bits pode representar valores que vão de 0 a 1023. Dessa forma, 0 volts é representado como 0000000000 (binário para 0), e 5 volts é representado como 1111111111 (binário para 1023). 
+<br>
+    Por que isso é importante? Bem, em aplicações práticas, como robótica ou IoT, você lê essa entrada analógica para tomar decisões. Digamos que você está programando um sistema de segurança: o sensor de umidade do solo dá uma tensão entre 0 e 3,3 volts. O ADC converte isso para um valor binário, e seu código decide se abre a válvula ou não com base nisso.
+
+   </p>
+   <h3> valor em volts da entrada analógica no arduíno e a resolução em bits</h3>
+   <p>0 e 1023</p>
+
+
+
+
+    </main>
+    <footer>
+        By Kauã &copy;&trade;
+    </footer>
+</body>
+</html>
